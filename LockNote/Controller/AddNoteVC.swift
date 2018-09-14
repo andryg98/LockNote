@@ -9,8 +9,19 @@
 import UIKit
 
 class AddNoteVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+  
+  //Outlets
+  @IBOutlet weak var dateText: UILabel!
+  @IBOutlet weak var lockedControl: UISegmentedControl!
+  @IBOutlet weak var noteText: UITextView!
+  @IBOutlet weak var saveNoteButton: UIButton!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    saveNoteButton.layer.cornerRadius = 10
+  }
+  
+  @IBAction func saveNote(_ sender: Any) {
+    
+  }
 }

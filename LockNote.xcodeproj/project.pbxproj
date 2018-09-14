@@ -17,6 +17,8 @@
 		6535A2E6214BC2F200263CEA /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6535A2E5214BC2F200263CEA /* Note.swift */; };
 		6535A2E8214BC4BE00263CEA /* AddNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6535A2E7214BC4BE00263CEA /* AddNoteVC.swift */; };
 		6535A2EA214BC76700263CEA /* UpdateNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6535A2E9214BC76700263CEA /* UpdateNoteVC.swift */; };
+		6551984F214C4801009114EA /* SegmentControlEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551984E214C4801009114EA /* SegmentControlEnum.swift */; };
+		65519851214C489C009114EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65519850214C489C009114EA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		6535A2E5214BC2F200263CEA /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		6535A2E7214BC4BE00263CEA /* AddNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteVC.swift; sourceTree = "<group>"; };
 		6535A2E9214BC76700263CEA /* UpdateNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteVC.swift; sourceTree = "<group>"; };
+		6551984E214C4801009114EA /* SegmentControlEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlEnum.swift; sourceTree = "<group>"; };
+		65519850214C489C009114EA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7AA57F06B031B666BE466CBD /* Pods-LockNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LockNote/Pods-LockNote.debug.xcconfig"; sourceTree = "<group>"; };
 		D4D2EC07FB1AD4946C73325A /* Pods-LockNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LockNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-LockNote/Pods-LockNote.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +73,7 @@
 		6535A2CD214BB30B00263CEA /* LockNote */ = {
 			isa = PBXGroup;
 			children = (
+				6551984D214C4362009114EA /* Utilities */,
 				6535A2E2214BBE1400263CEA /* Model */,
 				6535A2E1214BBE1100263CEA /* View */,
 				6535A2E0214BBE0A00263CEA /* Controller */,
@@ -105,6 +110,15 @@
 				6535A2E5214BC2F200263CEA /* Note.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6551984D214C4362009114EA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6551984E214C4801009114EA /* SegmentControlEnum.swift */,
+				65519850214C489C009114EA /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		7F1EC340E61AD25AF1B608A1 /* Frameworks */ = {
@@ -239,11 +253,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6535A2E4214BC28B00263CEA /* NoteCell.swift in Sources */,
+				6551984F214C4801009114EA /* SegmentControlEnum.swift in Sources */,
 				6535A2D1214BB30B00263CEA /* MainVC.swift in Sources */,
 				6535A2E8214BC4BE00263CEA /* AddNoteVC.swift in Sources */,
 				6535A2EA214BC76700263CEA /* UpdateNoteVC.swift in Sources */,
 				6535A2CF214BB30B00263CEA /* AppDelegate.swift in Sources */,
 				6535A2E6214BC2F200263CEA /* Note.swift in Sources */,
+				65519851214C489C009114EA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
