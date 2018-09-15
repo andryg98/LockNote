@@ -36,6 +36,8 @@ class MainVC: UIViewController {
     self.tableView.reloadData()
   }
   
+  
+  // MARK: Operations with Realm database
   private func fetchNotes(forProperty property: String, ascending: Bool = false) -> [Note]? {
     let realm = try! Realm()
     let notesResult = realm.objects(Note.self).sorted(byKeyPath: property, ascending: ascending)
@@ -52,6 +54,7 @@ class MainVC: UIViewController {
     }
   }
 
+  // MARK: Segue manipolation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == TO_EDIT_SEGUE {
       if let updateVC = segue.destination as? UpdateNoteVC {
@@ -63,6 +66,8 @@ class MainVC: UIViewController {
   }
 }
 
+
+// MARK: TableView implementation
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return notes.count
@@ -78,7 +83,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let sender = notes[indexPath.row]
 
-    if notes[indexPath.row].isProtected {
+    if sender.isProtected {
       let policy = LAPolicy.deviceOwnerAuthenticationWithBiometrics
       if context.canEvaluatePolicy(policy, error: nil) {
         context.evaluatePolicy(policy, localizedReason: "Edit note requires authentication") { (success, error) in

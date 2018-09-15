@@ -6,7 +6,9 @@
 //  Copyright © 2018 Andrea Garau. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 let TO_EDIT_SEGUE = "toEditNote"
 let CELL_ID = "NoteCell"
+
+
