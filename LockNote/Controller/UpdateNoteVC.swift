@@ -12,7 +12,7 @@ import RealmSwift
 class UpdateNoteVC: UIViewController {
   
   //Outlets
-  @IBOutlet weak var dateText: UILabel!
+  @IBOutlet weak var titleText: UITextField!
   @IBOutlet weak var lockedControl: UISegmentedControl!
   @IBOutlet weak var noteText: UITextView!
   @IBOutlet weak var updateButton: UIButton!
@@ -25,7 +25,13 @@ class UpdateNoteVC: UIViewController {
     super.viewDidLoad()
     updateButton.layer.cornerRadius = 10
     cancelButton.layer.cornerRadius = 10
+    
+    if let note = note {
+      noteText.text = note.noteText
+      titleText.text = note.noteTitle
+    }
   }
+  
   
   @IBAction func updateNote(_ sender: Any) {
     let realm = try! Realm()
@@ -33,8 +39,10 @@ class UpdateNoteVC: UIViewController {
       if let note = note {
         note.isProtected = lockedControl.selectedSegmentIndex == 0 ? false : true
         note.noteText = noteText.text!
+        note.creationDate = Date()
       }
     }
+    self.navigationController?.popViewController(animated: true)
   }
   
   @IBAction func cancelUpdate(_ sender: Any) {

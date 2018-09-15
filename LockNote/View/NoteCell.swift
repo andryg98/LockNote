@@ -14,6 +14,8 @@ class NoteCell: UITableViewCell {
   @IBOutlet private weak var lockedImage: UIImageView!
   @IBOutlet private weak var noteText: UILabel!
   @IBOutlet private weak var dateText: UILabel!
+  @IBOutlet weak var noteTitle: UILabel!
+  
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -22,6 +24,7 @@ class NoteCell: UITableViewCell {
   func configureCell(withNote note: Note) {
     self.lockedImage.isHidden = !note.isProtected
     self.noteText.text = note.noteText
+    self.noteTitle.text = note.noteTitle
     
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "EEEE, MMM d, yyyy"

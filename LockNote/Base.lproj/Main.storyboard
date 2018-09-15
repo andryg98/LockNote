@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nJ8-te-twe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nJ8-te-twe">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -42,9 +42,18 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qpO-Zy-aUg">
                                                     <rect key="frame" x="10" y="10" width="310" height="69.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jcsdc sdivb vbfzvbzhv viousbvjdbvsjlhjfaldfhjklsadlfsakjfhasdl" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEe-iU-gYg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="310" height="53"/>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lu-gj-t3M">
+                                                            <rect key="frame" x="0.0" y="0.0" width="310" height="22"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="22" id="6kd-oT-vSE"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jcsdc sdivb vbfzvbzhv viousbvjdbvsjlhjfaldfhjklsadlfsakjfhasdl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEe-iU-gYg">
+                                                            <rect key="frame" x="0.0" y="22" width="310" height="31"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -73,6 +82,7 @@
                                             <outlet property="dateText" destination="Vha-m1-Hg9" id="v0F-wd-tEW"/>
                                             <outlet property="lockedImage" destination="WLS-m2-IzB" id="pMO-2M-EFD"/>
                                             <outlet property="noteText" destination="fEe-iU-gYg" id="rrE-CE-YeT"/>
+                                            <outlet property="noteTitle" destination="3lu-gj-t3M" id="lBf-26-nfc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -112,21 +122,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create date: 10/10/2018 @9:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDu-XE-FBN">
-                                <rect key="frame" x="16" y="72" width="343" height="22"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AKD-fv-E1t">
-                                <rect key="frame" x="16" y="138" width="343" height="459"/>
+                                <rect key="frame" x="16" y="150" width="343" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xym-A4-iJz">
-                                <rect key="frame" x="16" y="102" width="343" height="29"/>
+                                <rect key="frame" x="16" y="114" width="343" height="29"/>
                                 <segments>
                                     <segment title="Unlocked"/>
                                     <segment title="Locked"/>
@@ -147,30 +150,36 @@
                                     <action selector="saveNote:" destination="BqZ-Wj-Lv2" eventType="touchUpInside" id="3vG-9h-80T"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zZa-Xu-BJF">
+                                <rect key="frame" x="16" y="74" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="AKD-fv-E1t" firstAttribute="leading" secondItem="VbR-4X-Rk5" secondAttribute="leading" constant="16" id="5Ma-kE-iI1"/>
                             <constraint firstItem="jBa-Pe-tlI" firstAttribute="top" secondItem="AKD-fv-E1t" secondAttribute="bottom" constant="10" id="6vl-NT-6K8"/>
-                            <constraint firstItem="Xym-A4-iJz" firstAttribute="top" secondItem="eDu-XE-FBN" secondAttribute="bottom" constant="8" id="BcQ-XT-GaE"/>
                             <constraint firstItem="VbR-4X-Rk5" firstAttribute="trailing" secondItem="Xym-A4-iJz" secondAttribute="trailing" constant="16" id="CF4-GS-cJV"/>
                             <constraint firstItem="VbR-4X-Rk5" firstAttribute="trailing" secondItem="jBa-Pe-tlI" secondAttribute="trailing" constant="70" id="CIv-1A-5vV"/>
                             <constraint firstItem="AKD-fv-E1t" firstAttribute="top" secondItem="Xym-A4-iJz" secondAttribute="bottom" constant="8" id="CTz-1M-3Zi"/>
                             <constraint firstItem="VbR-4X-Rk5" firstAttribute="trailing" secondItem="AKD-fv-E1t" secondAttribute="trailing" constant="16" id="Eb1-QH-efc"/>
-                            <constraint firstItem="VbR-4X-Rk5" firstAttribute="trailing" secondItem="eDu-XE-FBN" secondAttribute="trailing" constant="16" id="dsx-Ev-xYK"/>
+                            <constraint firstItem="zZa-Xu-BJF" firstAttribute="leading" secondItem="VbR-4X-Rk5" secondAttribute="leading" constant="16" id="Nl5-8w-bJF"/>
+                            <constraint firstItem="VbR-4X-Rk5" firstAttribute="trailing" secondItem="zZa-Xu-BJF" secondAttribute="trailing" constant="16" id="bhe-zy-zKF"/>
+                            <constraint firstItem="Xym-A4-iJz" firstAttribute="top" secondItem="zZa-Xu-BJF" secondAttribute="bottom" constant="10" id="d7x-s8-ZET"/>
                             <constraint firstItem="Xym-A4-iJz" firstAttribute="leading" secondItem="VbR-4X-Rk5" secondAttribute="leading" constant="16" id="elu-Ig-xeX"/>
                             <constraint firstItem="jBa-Pe-tlI" firstAttribute="leading" secondItem="VbR-4X-Rk5" secondAttribute="leading" constant="70" id="jDV-eG-lZ8"/>
-                            <constraint firstItem="eDu-XE-FBN" firstAttribute="leading" secondItem="VbR-4X-Rk5" secondAttribute="leading" constant="16" id="mef-t8-PJz"/>
-                            <constraint firstItem="eDu-XE-FBN" firstAttribute="top" secondItem="VbR-4X-Rk5" secondAttribute="top" constant="8" id="rHF-Tm-eA0"/>
                             <constraint firstItem="VbR-4X-Rk5" firstAttribute="bottom" secondItem="jBa-Pe-tlI" secondAttribute="bottom" constant="20" id="rY4-fz-0TK"/>
+                            <constraint firstItem="zZa-Xu-BJF" firstAttribute="top" secondItem="VbR-4X-Rk5" secondAttribute="top" constant="10" id="rmV-hx-ihq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VbR-4X-Rk5"/>
                     </view>
                     <connections>
-                        <outlet property="dateText" destination="eDu-XE-FBN" id="JbR-ea-KeG"/>
                         <outlet property="lockedControl" destination="Xym-A4-iJz" id="rSq-pc-215"/>
                         <outlet property="noteText" destination="AKD-fv-E1t" id="c5L-LI-MQN"/>
                         <outlet property="saveNoteButton" destination="jBa-Pe-tlI" id="hx1-Qj-Ln0"/>
+                        <outlet property="titleText" destination="zZa-Xu-BJF" id="PMU-Ux-hXC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0t-va-ejC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -211,20 +220,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create date: 10/10/2018 @9:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCB-hc-OTQ">
-                                <rect key="frame" x="16" y="72" width="343" height="22"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Lpj-TS-JTG">
-                                <rect key="frame" x="16" y="102" width="343" height="29"/>
-                                <segments>
-                                    <segment title="Unlocked"/>
-                                    <segment title="Locked"/>
-                                </segments>
-                                <color key="tintColor" red="0.99607843139999996" green="0.78823529410000004" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Whv-Nr-sRd">
                                 <rect key="frame" x="20" y="607" width="335" height="40"/>
                                 <subviews>
@@ -262,42 +257,55 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lsJ-P7-HGS">
-                                <rect key="frame" x="16" y="138" width="343" height="459"/>
+                                <rect key="frame" x="16" y="150" width="343" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eg4-Nn-Hjl">
+                                <rect key="frame" x="16" y="74" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Lpj-TS-JTG">
+                                <rect key="frame" x="16" y="114" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Unlocked"/>
+                                    <segment title="Locked"/>
+                                </segments>
+                                <color key="tintColor" red="0.99607843139999996" green="0.78823529410000004" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LCB-hc-OTQ" firstAttribute="leading" secondItem="dJ9-sY-a2r" secondAttribute="leading" constant="16" id="0wq-Sb-ZfE"/>
                             <constraint firstItem="dJ9-sY-a2r" firstAttribute="trailing" secondItem="Whv-Nr-sRd" secondAttribute="trailing" constant="20" id="8Zv-Jo-YYm"/>
                             <constraint firstItem="dJ9-sY-a2r" firstAttribute="trailing" secondItem="Lpj-TS-JTG" secondAttribute="trailing" constant="16" id="ApZ-BR-Mj8"/>
+                            <constraint firstItem="dJ9-sY-a2r" firstAttribute="trailing" secondItem="Eg4-Nn-Hjl" secondAttribute="trailing" constant="16" id="ETo-bq-PP9"/>
                             <constraint firstItem="Whv-Nr-sRd" firstAttribute="top" secondItem="lsJ-P7-HGS" secondAttribute="bottom" constant="10" id="Hun-rM-WEN"/>
                             <constraint firstItem="Whv-Nr-sRd" firstAttribute="leading" secondItem="dJ9-sY-a2r" secondAttribute="leading" constant="20" id="Mzu-px-46P"/>
                             <constraint firstItem="dJ9-sY-a2r" firstAttribute="bottom" secondItem="Whv-Nr-sRd" secondAttribute="bottom" constant="20" id="PpL-p5-X1K"/>
-                            <constraint firstItem="dJ9-sY-a2r" firstAttribute="trailing" secondItem="LCB-hc-OTQ" secondAttribute="trailing" constant="16" id="XcE-j0-ID5"/>
-                            <constraint firstItem="LCB-hc-OTQ" firstAttribute="top" secondItem="dJ9-sY-a2r" secondAttribute="top" constant="8" id="biJ-iE-cDh"/>
+                            <constraint firstItem="Eg4-Nn-Hjl" firstAttribute="leading" secondItem="dJ9-sY-a2r" secondAttribute="leading" constant="16" id="dud-xB-j4b"/>
+                            <constraint firstItem="Lpj-TS-JTG" firstAttribute="top" secondItem="Eg4-Nn-Hjl" secondAttribute="bottom" constant="10" id="eTu-Jc-kLm"/>
                             <constraint firstItem="Lpj-TS-JTG" firstAttribute="leading" secondItem="dJ9-sY-a2r" secondAttribute="leading" constant="16" id="fPj-6q-aHf"/>
                             <constraint firstItem="lsJ-P7-HGS" firstAttribute="top" secondItem="Lpj-TS-JTG" secondAttribute="bottom" constant="8" id="i1m-3e-T5t"/>
-                            <constraint firstItem="Lpj-TS-JTG" firstAttribute="top" secondItem="LCB-hc-OTQ" secondAttribute="bottom" constant="8" id="l2n-hT-rlc"/>
                             <constraint firstItem="dJ9-sY-a2r" firstAttribute="trailing" secondItem="lsJ-P7-HGS" secondAttribute="trailing" constant="16" id="lGO-9f-XUE"/>
+                            <constraint firstItem="Eg4-Nn-Hjl" firstAttribute="top" secondItem="dJ9-sY-a2r" secondAttribute="top" constant="10" id="lzn-SH-ocn"/>
                             <constraint firstItem="lsJ-P7-HGS" firstAttribute="leading" secondItem="dJ9-sY-a2r" secondAttribute="leading" constant="16" id="qeW-li-Eml"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dJ9-sY-a2r"/>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="Ek5-5Q-uQA" id="xhw-eW-y3K"/>
-                        <outlet property="dateText" destination="LCB-hc-OTQ" id="fIb-1d-r23"/>
                         <outlet property="lockedControl" destination="Lpj-TS-JTG" id="dlB-W3-FwX"/>
                         <outlet property="noteText" destination="lsJ-P7-HGS" id="9LW-3N-I9i"/>
+                        <outlet property="titleText" destination="Eg4-Nn-Hjl" id="B6a-fy-f0V"/>
                         <outlet property="updateButton" destination="MOS-Ht-ysd" id="gJf-Pn-H7q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8P-Nk-dKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="557"/>
+            <point key="canvasLocation" x="1861.5999999999999" y="556.37181409295351"/>
         </scene>
     </scenes>
     <resources>
