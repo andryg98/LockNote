@@ -30,7 +30,6 @@ class MainVC: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    // TODO - Add listener to realm database for adding and updating operations
     if let notes = fetchNotes(forProperty: "creationDate") {
       self.notes = notes
     }
@@ -45,6 +44,13 @@ class MainVC: UIViewController {
     
     return notes
   }
+  
+  private func removeNote(_ note: Note) {
+    let realm = try! Realm()
+    try! realm.write {
+      realm.delete(note)
+    }
+  }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == TO_EDIT_SEGUE {
@@ -55,9 +61,7 @@ class MainVC: UIViewController {
       }
     }
   }
-  
 }
-
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,12 +76,39 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    // TODO - Add biometric if note is protected
-    self.performSegue(withIdentifier: TO_EDIT_SEGUE, sender: notes[indexPath.row])
+    let sender = notes[indexPath.row]
+
+    if notes[indexPath.row].isProtected {
+      let policy = LAPolicy.deviceOwnerAuthenticationWithBiometrics
+      if context.canEvaluatePolicy(policy, error: nil) {
+        context.evaluatePolicy(policy, localizedReason: "Edit note requires authentication") { (success, error) in
+          if success {
+            /*
+             policy is evaluated on a private queue internal to the framework
+             Code for perform segue has to be executed on the main queue
+             */
+            DispatchQueue.main.async {
+              self.performSegue(withIdentifier: TO_EDIT_SEGUE, sender: sender)
+            }
+          }
+        }
+      }
+    } else {
+      performSegue(withIdentifier: TO_EDIT_SEGUE, sender: sender)
+    }
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 90.0
+  }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == UITableViewCellEditingStyle.delete {
+      let deleteNote = notes[indexPath.row]
+      self.notes.remove(at: indexPath.row)
+      removeNote(deleteNote)
+      tableView.reloadData()
+    }
   }
 }
 

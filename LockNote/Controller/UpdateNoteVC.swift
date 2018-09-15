@@ -26,9 +26,11 @@ class UpdateNoteVC: UIViewController {
     updateButton.layer.cornerRadius = 10
     cancelButton.layer.cornerRadius = 10
     
+    
     if let note = note {
       noteText.text = note.noteText
       titleText.text = note.noteTitle
+      lockedControl.selectedSegmentIndex = note.isProtected ? 1 : 0
     }
   }
   
